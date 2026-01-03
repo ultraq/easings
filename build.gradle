@@ -20,7 +20,7 @@ plugins {
 }
 
 description = 'Easing functions for the JVM, adapted from the Easing functions cheat sheet'
-version = '1.0.0'
+version = '1.1.0-SNAPSHOT'
 group = 'nz.net.ultraq'
 
 // @formatter:off
