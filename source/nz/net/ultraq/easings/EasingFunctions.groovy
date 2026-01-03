@@ -59,126 +59,126 @@ class EasingFunctions {
 	 * <a href="https://easings.net/#easeInQuad">https://easings.net/#easeInQuad</a>
 	 */
 	static float easeInQuad(float x) {
-		return x**2
+		return x * x
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeOutQuad">https://easings.net/#easeOutQuad</a>
 	 */
 	static float easeOutQuad(float x) {
-		return 1 - (1 - x)**2
+		return 1 - (1 - x) * (1 - x)
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInOutQuad">https://easings.net/#easeInOutQuad</a>
 	 */
 	static float easeInOutQuad(float x) {
-		return x < 0.5 ? 2 * x**2 : 1 - (-2 * x + 2)**2 / 2
+		return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInCubic">https://easings.net/#easeInCubic</a>
 	 */
 	static float easeInCubic(float x) {
-		return x**3
+		return x * x * x
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeOutCubic">https://easings.net/#easeOutCubic</a>
 	 */
 	static float easeOutCubic(float x) {
-		return 1 - (1 - x)**3
+		return 1 - Math.pow(1 - x, 3)
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInOutCubic">https://easings.net/#easeInOutCubic</a>
 	 */
 	static float easeInOutCubic(float x) {
-		return x < 0.5 ? 4 * x**3 : 1 - (-2 * x + 2)**3 / 2
+		return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInQuart">https://easings.net/#easeInQuart</a>
 	 */
 	static float easeInQuart(float x) {
-		return x**4
+		return x * x * x * x
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeOutQuart">https://easings.net/#easeOutQuart</a>
 	 */
 	static float easeOutQuart(float x) {
-		return 1 - (1 - x)**4
+		return 1 - Math.pow(1 - x, 4)
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInOutQuart">https://easings.net/#easeInOutQuart</a>
 	 */
 	static float easeInOutQuart(float x) {
-		return x < 0.5 ? 8 * x**4 : 1 - (-2 * x + 2)**4 / 2
+		return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInQuint">https://easings.net/#easeInQuint</a>
 	 */
 	static float easeInQuint(float x) {
-		return x**5
+		return x * x * x * x * x
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeOutQuint">https://easings.net/#easeOutQuint</a>
 	 */
 	static float easeOutQuint(float x) {
-		return 1 - (1 - x)**5
+		return 1 - Math.pow(1 - x, 5)
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInOutQuint">https://easings.net/#easeInOutQuint</a>
 	 */
 	static float easeInOutQuint(float x) {
-		return x < 0.5 ? 16 * x**5 : 1 - (-2 * x + 2)**5 / 2
+		return x < 0.5 ? 16 * x * x * x * x * x : 1 - Math.pow(-2 * x + 2, 5) / 2
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInExpo">https://easings.net/#easeInExpo</a>
 	 */
 	static float easeInExpo(float x) {
-		return x == 0 ? 0 : 2**(10 * x - 10)
+		return x == 0 ? 0 : Math.pow(2, 10 * x - 10)
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeOutExpo">https://easings.net/#easeOutExpo</a>
 	 */
 	static float easeOutExpo(float x) {
-		return x == 1 ? 1 : 1 - 2**(-10 * x)
+		return x == 1 ? 1 : 1 - Math.pow(2, -10 * x)
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInOutExpo">https://easings.net/#easeInOutExpo</a>
 	 */
 	static float easeInOutExpo(float x) {
-		return x == 0 ? 0 : x == 1 ? 1 : x < 0.5 ? 2**(20 * x - 10) / 2 : (2 - 2**(-20 * x + 10)) / 2
+		return x == 0 ? 0 : x == 1 ? 1 : x < 0.5 ? Math.pow(2, 20 * x - 10) / 2 : (2 - Math.pow(2, -20 * x + 10)) / 2
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInCirc">https://easings.net/#easeInCirc</a>
 	 */
 	static float easeInCirc(float x) {
-		return 1 - Math.sqrt(1 - x**2)
+		return 1 - Math.sqrt(1 - Math.pow(x, 2))
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeOutCirc">https://easings.net/#easeOutCirc</a>
 	 */
 	static float easeOutCirc(float x) {
-		return Math.sqrt(1 - (1 - x)**2)
+		return Math.sqrt(1 - Math.pow(x - 1, 2))
 	}
 
 	/**
 	 * <a href="https://easings.net/#easeInOutCirc">https://easings.net/#easeInOutCirc</a>
 	 */
 	static float easeInOutCirc(float x) {
-		return x < 0.5 ? (1 - Math.sqrt(1 - 2 * x**2)) / 2 : (Math.sqrt(1 - (-2 * x + 2)**2) + 1) / 2
+		return x < 0.5 ? (1 - Math.sqrt(1 - Math.pow(2 * x, 2))) / 2 : (Math.sqrt(1 - Math.pow(-2 * x + 2, 2)) + 1) / 2
 	}
 
 	/**
@@ -267,6 +267,6 @@ class EasingFunctions {
 	 * <a href="https://easings.net/#easeInOutBounce">https://easings.net/#easeInOutBounce</a>
 	 */
 	static float easeInOutBounce(float x) {
-		return x < 0.5 ? easeInBounce(x * 2 as float) / 2 : easeOutBounce(x * 2 - 1 as float) / 2 + 0.5
+		return x < 0.5 ? easeInBounce(x * 2 as float) / 2 as float : easeOutBounce(x * 2 - 1 as float) / 2 + 0.5 as float
 	}
 }
