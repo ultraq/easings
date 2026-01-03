@@ -2,6 +2,9 @@
 Easings
 =======
 
+[![build](https://github.com/ultraq/easings/actions/workflows/build.yml/badge.svg)](https://github.com/ultraq/easings/actions/workflows/build.yml)
+[![Maven Central Version](https://img.shields.io/maven-central/v/nz.net.ultraq/easings)](https://central.sonatype.com/artifact/nz.net.ultraq/easings)
+
 Easing functions for the JVM, adapted from the [Easing functions cheat sheet](https://easings.net/)
 
 
@@ -23,5 +26,5 @@ of available versions.
 API
 ---
 
-There is just 1 class, `EasingFunctions`, which contains methods which map to
-each of the easing functions found on [easings.net](https://easings.net/)
+There is just 1 class, `EasingFunctions`, which contains methods for each of the
+easing functions found on [easings.net](https://easings.net/)
