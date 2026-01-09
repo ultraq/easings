@@ -64,10 +64,10 @@ class Transition {
 	 * Starts the transition.
 	 *
 	 * @return
-	 *   A {@code Future} that will be completed when the transition is.  It can
-	 *   also be cancelled via thread interruption (eg: {@code future.cancel(true)}).
+	 *   A {@code CompletableFuture} that will be completed when the transition is.
+	 *   It can also be cancelled via thread interruption (eg: {@code future.cancel(true)}).
 	 */
-	Future<Void> start() {
+	CompletableFuture<Void> start() {
 
 		var startTimeMs = System.currentTimeMillis()
 		var endTimeMs = startTimeMs + durationMs
