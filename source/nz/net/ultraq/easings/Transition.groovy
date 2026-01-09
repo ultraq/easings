@@ -18,7 +18,6 @@ package nz.net.ultraq.easings
 
 import groovy.transform.CompileStatic
 import java.util.concurrent.CompletableFuture
-import java.util.concurrent.Future
 import java.util.function.Consumer
 
 /**
@@ -64,10 +63,10 @@ class Transition {
 	 * Starts the transition.
 	 *
 	 * @return
-	 *   A {@code Future} that will be completed when the transition is.  It can
-	 *   also be cancelled via thread interruption (eg: {@code future.cancel(true)}).
+	 *   A {@code CompletableFuture} that will be completed when the transition is.
+	 *   It can also be cancelled via thread interruption (eg: {@code future.cancel(true)}).
 	 */
-	Future<Void> start() {
+	CompletableFuture<Void> start() {
 
 		var startTimeMs = System.currentTimeMillis()
 		var endTimeMs = startTimeMs + durationMs
