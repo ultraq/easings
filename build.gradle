@@ -16,7 +16,7 @@
 
 plugins {
 	id 'idea'
-	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.8.0'
+	id 'nz.net.ultraq.gradle.fluent-configuration' version '0.9.1'
 }
 
 description = 'Easing functions for the JVM, adapted from the Easing functions cheat sheet'
@@ -41,25 +41,25 @@ configure {
 				api 'org.apache.groovy:groovy:4.0.29'
 			}
 
-	afterEvaluate {
-		createMavenPublication()
-			.withArtifacts(groovydocJar)
-			.configurePom() {
-				url = 'https://github.com/ultraq/easings'
-				inceptionYear = '2026'
-			}
-			.useApache20License()
-			.withGitHubScm('ultraq')
-			.withDevelopers([
-				name: 'Emanuel Rabina',
-				email: 'emanuelrabina@gmail.com',
-				url: 'https://www.ultraq.net.nz'
-			])
-			.publishToMavenCentral(
-				findProperty('mavenCentral.publisher.username'),
-				findProperty('mavenCentral.publisher.password'),
-				'nz.net.ultraq'
-			)
-	}
+	createMavenPublication()
+		.withArtifacts(groovydocJar)
+		.configurePom() {
+			url = 'https://github.com/ultraq/easings'
+			inceptionYear = '2026'
+		}
+		.useApache20License()
+		.withGitHubScm('ultraq')
+		.withDevelopers([
+			name: 'Emanuel Rabina',
+			email: 'emanuelrabina@gmail.com',
+			url: 'https://www.ultraq.net.nz'
+		])
+
+	createMavenCentralPublisherBundle()
+		.forThisProject()
+		.withCredentials(
+			findProperty('mavenCentral.publisher.username'),
+			findProperty('mavenCentral.publisher.password')
+		)
 }
 // @formatter:on
